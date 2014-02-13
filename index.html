@@ -8,6 +8,17 @@
        <script src="http://underscorejs.org/underscore.js"> </script>
        <script type="text/javascript" src="CommaSeparatedValue_JM.js"></script>
 
+       <script type="text/html" id="tabla">
+        <table id="resultado" class="center">
+          <% _.each(items, function(name) { %>
+            <tr class="<%= name.rowc %>">
+              <% _.each(name.value, function(celda) { %>
+                <td><%= celda %></td>
+              <% }); %>
+            </tr>
+          <% }); %>
+        </table>
+       </script>
 
    </head>
 

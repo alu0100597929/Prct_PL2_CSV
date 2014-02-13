@@ -15,9 +15,6 @@ function tablaCSV()
   var lineas = datos.split(/\n+\s*/);
   var tamFilaComun = NaN;
   var r = [];
-  var row = "<% _.each(items, function(name) { %>"     +
-            "                    <td><%= name %></td>" +
-            "              <% }); %>";
 
   
   if (window.localStorage)
@@ -38,7 +35,8 @@ function tablaCSV()
             {
               error = true;
             }
-            else {
+            else 
+            {
               tamFilaComun = elementos.length;
               error = false;
             }
@@ -52,8 +50,8 @@ function tablaCSV()
                 resultado.push(elementos[j]);
             }
 
-            var tr = error? '<tr class="error">' : '<tr>';
-            r.push(tr+_.template(row, {items : resultado})+"</tr>");
+            var rowc = error? 'error' : '';
+            r.push({ value: resultado, rowc: rowc});
         }
         else
         {
@@ -61,29 +59,20 @@ function tablaCSV()
             error = true;
         }
       
-      r.unshift('<p>\n<table class="center" id="result">');
+      
+      /*r.unshift('<p>\n<table class="center" id="result">');
       r.push('</table>');
-      tablaResultados.innerHTML = r.join('\n');
+      tablaResultados.innerHTML = r.join('\n');*/
+
   }
-  
-  
-  
-  
 
-
+  var undtemplate = tabla.innerHTML;
+  tablaResultados.innerHTML = _.template(undtemplate, {items: r});
 
 }
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
+  
  
 window.onload = function() {
   if (window.localStorage && localStorage.datosIN) {
