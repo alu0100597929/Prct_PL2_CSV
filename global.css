@@ -1,0 +1,51 @@
+
+
+body
+{
+  font-family: Arial;
+  font-size:large;
+  color: #FFFFFF;
+
+  background-repeat:no-repeat;
+  background-position:center top;
+  background-color:#222222;
+  background-image:url('black-wallpaper-hd.jpg');
+}
+
+th, td 
+{
+  margin: 0px;
+  padding: 0px;
+  direction: ltr;
+  border: 1px solid #999999;
+  color:#FFFFFF;
+}
+
+table 
+{
+  margin-bottom: 1.25rem;
+  border: 1px solid #FFFFFF;
+}
+
+textarea
+{
+	background-color:#222222;
+	color:#FFFFFF;
+}
+
+table.input {
+    margin-left:auto; 
+    margin-right:auto;
+
+    text-align: center;
+    border-collapse: separate;
+}
+
+a
+{
+	color: #FF5555;
+}
+
+
+#resultado { border-color: red; }
+tr.error { background-color: red; }
