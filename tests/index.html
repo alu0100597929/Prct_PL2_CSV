@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mocha.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"> </script>
+    <script src="http://underscorejs.org/underscore.js"> </script>
+
+    <script type="text/html" id="tabla">
+        <table id="resultado" class="center">
+          <% _.each(items, function(name) { %>
+            <tr class="<%= name.rowc %>">
+              <% _.each(name.value, function(celda) { %>
+                <td><%= celda %></td>
+              <% }); %>
+            </tr>
+          <% }); %>
+        </table>
+       </script>
+
+  </head>
+  
+  <body>
+    <div id="mocha"></div>
+
+    <textarea id="datosIN"></textarea>
+    <span class="output" id="tablaResultados"></span>
+    
+    <script src="chai.js"></script>
+    <script src="mocha.js"></script>
+    <script src="../CommaSeparatedValue_JM.js"></script>
+    
+    <script>mocha.setup('tdd')</script>
+    <script src="tests.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
