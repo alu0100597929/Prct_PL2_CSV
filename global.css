@@ -47,5 +47,5 @@ a
 }
 
 
-#resultado { border-color: red; }
-tr.error { background-color: red; }
+#resultado { border-color: #FF5555; }
+tr.error { background-color: #FF5555; }
